@@ -7,7 +7,7 @@ const NumberOfPeople = ({ userNumberOfPeople, numberOfPeopleValue }) => {
             <div className='number-of-people-text'>
                 <h2 className='number-of-people-text__title'>Number of People</h2>
                 {
-                    +numberOfPeopleValue === 0 ? <span className='number-of-people-text__warning'>Can't be zero</span> : null
+                    typeof numberOfPeopleValue !== 'number' ? (+numberOfPeopleValue === 0 ? numberOfPeopleValue === '' ? null : <span className='number-of-people-text__warning'>Can't be zero</span> : null) : null
                 }
             </div>
             <Input icon={'person'} userInput={userNumberOfPeople} />

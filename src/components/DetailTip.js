@@ -1,6 +1,7 @@
 import './../App.css'
 
 const DetailTip = ({ totalBillPerPersonAndTip, tipPerPerson }) => {
+
     return (
         <div className='container-detail-tip'>
             <div className='detail-tip'>

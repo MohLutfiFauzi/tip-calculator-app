@@ -31,8 +31,6 @@ function App() {
     tipPerPerson += totalBillPerPersonAndTip
   }
 
-  console.log(tipPerPerson);
-
   return (
     <main className="app">
       <Logo />

@@ -1,38 +1,230 @@
-.App {
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.app {
+  background-color: var(--light-grayish-cyan);
+}
+
+.logo {
   text-align: center;
+  padding: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  background-color: var(--white);
+  border-radius: 2rem;
+  overflow: hidden;
+  padding: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bill {
+  width: 100%;
+  margin-bottom: 2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bill-text {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bill-text__title {
+  font-size: 1rem;
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 0.5em;
+}
+
+.bill-text__warning {
+  font-size: 1rem;
+  color: red;
+  margin-bottom: 0.5em;
+}
+
+.input {
+  position: relative;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input__icon-dolar {
+  position: absolute;
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input__input-field {
+  width: 100%;
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 0.5em;
+  color: var(--very-dark-cyan);
+  border-radius: 0.5rem;
+}
+
+.input__input-field::placeholder {
+  color: var(--grayish-cyan);
+}
+
+.input__input-field:focus {
+  outline: 1px solid var(--grayish-cyan);
+}
+
+.container-tip {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.container-tip__text {
+  font-size: 1rem;
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 0.5em;
+}
+
+.select-tip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.select-tip__button-original {
+  font-size: 1.5rem;
+  border: none;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  padding: 0.25em 0;
+  width: 9.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.select-tip__button-original:hover {
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.select-tip__input-custom {
+  width: 9.2rem;
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 0.25em 0.7em;
+  color: var(--very-dark-cyan);
+  border-radius: 0.5rem;
+}
+
+.select-tip__input-custom:focus {
+  outline: 1px solid var(--grayish-cyan);
+}
+
+.number-of-people {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.number-of-people-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number-of-people-text__title {
+  font-size: 1rem;
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 0.5em;
+}
+
+.number-of-people-text__warning {
+  font-size: 1rem;
+  color: red;
+  margin-bottom: 0.5em;
+}
+
+.container-detail-tip {
+  background-color: var(--very-dark-cyan);
+  padding: 1.5em;
+  min-width: 50%;
+  border-radius: 1rem;
+}
+
+.detail-tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.detail-tip__h3 {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.detail-tip__p {
+  color: var(--strong-cyan);
+  font-size: 0.9rem;
+}
+
+.detail-tip__total {
+  font-size: 2rem;
+  color: var(--strong-cyan);
+}
+
+.container-detail-tip__btn {
+  width: 100%;
+  padding-block: 0.5em;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.container-detail-tip__btn:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
+@media (max-width: 374px) {
+  .select-tip__button-original {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .select-tip__input-custom {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .container-detail-tip {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-detail-tip__btn {
+    justify-self: end;
+    align-self: flex-end;
   }
 }

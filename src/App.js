@@ -7,9 +7,9 @@ import DetailTip from './components/DetailTip';
 import useInput from './hooks/useInput';
 
 function App() {
-  const [userBill, handleUserBill] = useInput(0);
-  const [userSelectTip, handleuserSelectTip] = useInput(0);
-  const [userNumberOfPeople, handleUserNumberOfPeople] = useInput(0);
+  const [userBill, handleUserBill, setUserBill] = useInput(0);
+  const [userSelectTip, handleuserSelectTip, setSelecTip] = useInput(0);
+  const [userNumberOfPeople, handleUserNumberOfPeople, setUserNumberOfPeople] = useInput(0);
 
   const rounded = (value) => {
     let roundedString = value.toFixed(2);
@@ -31,6 +31,12 @@ function App() {
     tipPerPerson += totalBillPerPersonAndTip
   }
 
+  const handleReset = () => {
+    setUserBill(0)
+    setSelecTip(0)
+    setUserNumberOfPeople(0)
+  }
+
   return (
     <main className="app">
       <Logo />
@@ -40,7 +46,7 @@ function App() {
           <SelectTip userSelectTip={handleuserSelectTip} selectTipValue={userSelectTip} />
           <NumberOfPeople userNumberOfPeople={handleUserNumberOfPeople} numberOfPeopleValue={userNumberOfPeople} />
         </div>
-        <DetailTip totalBillPerPersonAndTip={rounded(totalBillPerPersonAndTip)} tipPerPerson={rounded(tipPerPerson)} />
+        <DetailTip totalBillPerPersonAndTip={rounded(totalBillPerPersonAndTip)} tipPerPerson={rounded(tipPerPerson)} handleReset={handleReset} />
       </section>
     </main>
   );

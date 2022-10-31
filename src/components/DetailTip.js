@@ -1,6 +1,6 @@
 import './../App.css'
 
-const DetailTip = ({ totalBillPerPersonAndTip, tipPerPerson }) => {
+const DetailTip = ({ totalBillPerPersonAndTip, tipPerPerson, handleReset }) => {
 
     return (
         <div className='container-detail-tip'>
@@ -24,7 +24,7 @@ const DetailTip = ({ totalBillPerPersonAndTip, tipPerPerson }) => {
                         <strong className='detail-tip__total'>$0</strong>
                 }
             </div>
-            <button className='container-detail-tip__btn' type={'reset'}>RESET</button>
+            <button className='container-detail-tip__btn' type={'reset'} onClick={handleReset}>RESET</button>
         </div>
     )
 }

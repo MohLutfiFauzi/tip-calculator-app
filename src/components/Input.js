@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './../App.css'
 
 const Input = ({ icon, userInput }) => {
-    const [num, setNum] = useState('');
+    const [num, setNum] = useState(0);
 
     const handleNumChange = event => {
         const limit = 28;
